@@ -1,0 +1,159 @@
+@import '../../styles.scss';
+
+@keyframes caretFlashSmooth {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.wrapper {
+    max-width: 1250px;
+    display: grid;
+    grid-auto-flow: row;
+    min-height: calc(100vh - 1rem);
+    padding: 1.5rem;
+    gap: 2rem;
+    align-items: center;
+    z-index: 999;
+    grid-template-rows: auto 1fr auto;
+    width: 100%;
+    transition: padding-top .125s;
+}
+
+main {
+    height: 100%;
+    display: grid;
+
+    .main-wrapper {
+        height: 100%;
+        display: grid;
+        grid-template-rows: 1fr auto 1fr;
+
+        .test-config {
+            display: grid;
+            font-size: .75rem;
+            transition: opacity .125s;
+            justify-content: space-around;
+            height: max-content;
+
+            .row {
+                display: flex;
+                background: $nandor;
+                border-radius: .5rem;
+
+                .row-wrapper {
+                    display: grid;
+                    grid-auto-flow: column;
+                    justify-content: center;
+
+                    .container {
+                        display: flex;
+                        gap: .5em;
+                    }
+
+                    .left-container {
+                        padding: .75rem .5rem .7rem 1rem;
+
+                    }
+
+                    .middle-container {
+                        padding: .75rem .5rem .7rem;
+                    }
+
+                    .right-container {
+                        padding: .75rem 1rem .7rem .5rem;
+
+                    }
+                }
+
+                .punctuation-number-config {
+                    display: grid;
+                    grid-auto-flow: column;
+                    justify-content: center;
+
+                    .punctuation {
+                        padding: .75rem .5rem .7rem 1rem;
+                        display: flex;
+                        gap: .5em;
+                    }
+
+                    .number {
+                        padding: .75rem 1rem .7rem .5rem;
+                        display: flex;
+                        gap: .5em;
+                    }
+                }
+            }
+        }
+
+        .test-container {
+
+            .language {
+                display: flex;
+                flex-wrap: wrap;
+                text-align: center;
+                justify-content: center;
+                margin: .5rem;
+            }
+
+            .test {
+                height: 117px;
+                overflow: hidden;
+                color: $abbey;
+                position: relative;
+
+                .caret {
+                    height: 1.2em;
+                    background: $akaroa;
+                    animation: caretFlashSmooth 1s infinite;
+                    position: absolute;
+                    border-radius: .5rem;
+                    transform-origin: top left;
+                    width: .1em;
+                    font-size: 1.5rem;
+                    display: block;
+                }
+
+                .words {
+                    font-size: 1.5rem;
+                    height: 156px;
+                    overflow: hidden;
+                    width: 100%;
+                    margin-left: unset;
+                    transition: all 0.25s ease 0s;
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-content: flex-start;
+
+                    .word {
+                        position: relative;
+                        font-size: 1em;
+                        line-height: 1em;
+                        margin: .25em;
+                        color: var(--sub-color);
+                        font-variant: no-common-ligatures;
+                        border-bottom: 2px solid transparent;
+                        user-select: none;
+                    }
+                }
+            }
+
+            .reset {
+                margin: 1rem auto 0;
+                display: flex;
+                padding: 1em 2em;
+            }
+        }
+    }
+}
+
+.spacer {
+    height: auto;
+    width: .25rem;
+    border-radius: calc(.5rem / 2);
+    background: $mine-shaft;
+    margin: .5rem 0;
+}
