@@ -81,7 +81,7 @@ export class DashboardComponent implements OnInit {
   currentWordArray = 0
   currentLetterArray = 0
 
-  currentLetter = ''
+  currentLetter: string | undefined
 
   caretStyle = {
     left: 5,
