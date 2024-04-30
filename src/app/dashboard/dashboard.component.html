@@ -121,54 +121,20 @@
               <span>indonesian</span>
             </div>
           </div>
+          <input type="text" (keydown)="onKeyDown($event)">
   
           <div class="test">
             <div class="caret" [ngStyle]="{'left': caretStyle.left + 'px', 'top': caretStyle.top + 'px'}"></div>
             <div class="words">
-              <div class="word">sabar</div>
-              <div class="word">tolong</div>
-              <div class="word">meski</div>
-              <div class="word">apalagi</div>
-              <div class="word">beberapa</div>
-              <div class="word">tidak</div>
-              <div class="word">angka</div>
-              <div class="word">anak</div>
-              <div class="word">ragam</div>
-              <div class="word">desa</div>
-              <div class="word">belum</div>
-              <div class="word">anda</div>
-              <div class="word">nikmat</div>
-              <div class="word">selanjutnya</div>
-              <div class="word">lagipula</div>
-              <div class="word">mana</div>
-              <div class="word">demi</div>
-              <div class="word">ragam</div>
-              <div class="word">menang</div>
-              <div class="word">maaf</div>
-              <div class="word">beberapa</div>
-              <div class="word">kertas</div>
-              <div class="word">publik</div>
-              <div class="word">melalui</div>
-              <div class="word">yakin</div>
-              <div class="word">bermain</div>
-              <div class="word">mengenai</div>
-              <div class="word">pria</div>
-              <div class="word">tolong</div>
-              <div class="word">baku</div>
-              <div class="word">jarang</div>
-              <div class="word">ternyata</div>
-              <div class="word">cantik</div>
-              <div class="word">seru</div>
-              <div class="word">mungkin</div>
-              <div class="word">meski</div>
-              <div class="word">ayo</div>
+              <div class="word" *ngFor="let word of words">
+                <span *ngFor="let letter of word" [ngStyle]="{'visibility': letter.value === ' ' ? 'hidden' : 'visible'}">{{ letter.value}}</span>
+              </div>
             </div>
           </div>
   
           <div class="reset">
             <div class="text-button">
               <fa-icon class="fas-icon fas" style="margin-right: .5rem" [icon]="faRotateRight"></fa-icon>
-              <!-- <span>indonesian</span> -->
             </div>
           </div>
         </div>
